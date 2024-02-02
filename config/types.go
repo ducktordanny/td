@@ -1,6 +1,7 @@
 package config
 
 type TodoModel struct {
+	id       string
 	content  string
 	resolved bool
 }

@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/ducktordanny/td/flags"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	flagValues := flags.Init()
+	fmt.Println(flagValues)
 }

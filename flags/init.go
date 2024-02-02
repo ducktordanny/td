@@ -27,8 +27,8 @@ func Init() FlagValues {
 	initStringVarFlag(&Resolve)
 	initStringVarFlag(&Unresolve)
 	initStringVarFlag(&Toggle)
-	initStringVarFlag(&Edit)
 
+	initBoolVarFlag(&Edit)
 	initBoolVarFlag(&List)
 	initBoolVarFlag(&ListResolved)
 	initBoolVarFlag(&ListUnresolved)

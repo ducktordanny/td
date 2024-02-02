@@ -14,7 +14,7 @@ type FlagValues struct {
 	Resolve        string
 	Unresolve      string
 	Toggle         string
-	Edit           string
+	Edit           bool
 	List           bool
 	ListResolved   bool
 	ListUnresolved bool

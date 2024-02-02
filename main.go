@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/ducktordanny/td/flags"
+	"github.com/ducktordanny/td/process"
 )
 
 func main() {
 	flagValues := flags.Init()
-	fmt.Println(flagValues)
+	process.CommandsToAction(&flagValues)
 }

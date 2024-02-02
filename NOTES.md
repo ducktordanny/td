@@ -82,4 +82,5 @@ We should be able to do these for local, and global scopes, or even do it based 
 
 ## TODO
 
-- [ ] Should think through how to handle global TODOs and start to implement subcommand functionality for it
+- [ ] Should think through how to handle global TODOs and start to implement subcommand functionality for it.
+- [ ] Think about a TODO's ID, and also update the examples above.

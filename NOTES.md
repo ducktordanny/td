@@ -79,3 +79,7 @@ With commands we should be able to:
   - Get all
 
 We should be able to do these for local, and global scopes, or even do it based on path.
+
+## TODO
+
+- [ ] Should think through how to handle global TODOs and start to implement subcommand functionality for it

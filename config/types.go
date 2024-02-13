@@ -1,14 +1,14 @@
 package config
 
 type TodoModel struct {
-	id       string
-	content  string
-	resolved bool
+	Id       string
+	Content  string
+	Resolved bool
 }
 
-type LocalsMap []map[string][]TodoModel
+type LocalsMap map[string][]TodoModel
 
 type TdConfig struct {
-	globals []TodoModel
-	locals  LocalsMap
+	Globals []TodoModel
+	Locals  LocalsMap
 }

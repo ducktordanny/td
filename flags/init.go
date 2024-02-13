@@ -27,12 +27,10 @@ func Init() FlagValues {
 	initStringVarFlag(&Resolve)
 	initStringVarFlag(&Unresolve)
 	initStringVarFlag(&Toggle)
-
 	initBoolVarFlag(&Edit)
 	initBoolVarFlag(&List)
 	initBoolVarFlag(&ListResolved)
 	initBoolVarFlag(&ListUnresolved)
-
 	flag.Parse()
 
 	return FlagValues{

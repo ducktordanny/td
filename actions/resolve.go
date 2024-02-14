@@ -1,18 +1,22 @@
 package actions
 
-import "fmt"
+import (
+	"fmt"
 
-func Resolve(value *string) {
-	fmt.Println("resolve", *value)
+	"github.com/ducktordanny/td/flags"
+)
+
+func Resolve(scope flags.Scope, value *string) {
+	fmt.Println("resolve", *value, scope)
 	// TODO: implement
 }
 
-func Unresolve(value *string) {
-	fmt.Println("unresolve", *value)
+func Unresolve(scope flags.Scope, value *string) {
+	fmt.Println("unresolve", *value, scope)
 	// TODO: implement
 }
 
-func Toggle(value *string) {
-	fmt.Println("toggle", *value)
+func Toggle(scope flags.Scope, value *string) {
+	fmt.Println("toggle", *value, scope)
 	// TODO: implement
 }

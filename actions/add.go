@@ -1,8 +1,11 @@
 package actions
 
-import "fmt"
+import (
+	"fmt"
 
-func Add(value *string) {
-	fmt.Println("add", *value)
-	// TODO: implement
+	"github.com/ducktordanny/td/flags"
+)
+
+func Add(scope flags.Scope, value *string) {
+	fmt.Println("add", *value, scope)
 }

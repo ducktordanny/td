@@ -31,6 +31,7 @@ func Init() FlagValues {
 	initBoolVarFlag(&List)
 	initBoolVarFlag(&ListResolved)
 	initBoolVarFlag(&ListUnresolved)
+	initBoolVarFlag(&Global)
 	flag.Parse()
 
 	return FlagValues{
@@ -43,5 +44,6 @@ func Init() FlagValues {
 		List:           List.value,
 		ListResolved:   ListResolved.value,
 		ListUnresolved: ListUnresolved.value,
+		Global:         Global.value,
 	}
 }

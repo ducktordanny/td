@@ -53,3 +53,9 @@ var ListUnresolved = FlagProperties[bool]{
 	name:  "list-unresolved",
 	alias: "ls-urs",
 }
+
+var Global = FlagProperties[bool]{
+	usage: "Switches to global scope, and handles global TODOs.",
+	name:  "global",
+	alias: "g",
+}

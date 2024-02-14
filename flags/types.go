@@ -1,5 +1,12 @@
 package flags
 
+type Scope string
+
+const (
+	LocalScope  Scope = "local"
+	GlobalScope Scope = "global"
+)
+
 type FlagProperties[T any] struct {
 	value        T
 	defaultValue T
@@ -18,4 +25,5 @@ type FlagValues struct {
 	List           bool
 	ListResolved   bool
 	ListUnresolved bool
+	Global         bool
 }

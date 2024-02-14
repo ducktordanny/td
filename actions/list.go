@@ -1,18 +1,22 @@
 package actions
 
-import "fmt"
+import (
+	"fmt"
 
-func List(value *bool) {
-	fmt.Println("list", *value)
+	"github.com/ducktordanny/td/flags"
+)
+
+func List(scope flags.Scope, value *bool) {
+	fmt.Println("list", *value, scope)
 	// TODO: implement
 }
 
-func ListResolved(value *bool) {
-	fmt.Println("list resolved", *value)
+func ListResolved(scope flags.Scope, value *bool) {
+	fmt.Println("list resolved", *value, scope)
 	// TODO: implement
 }
 
-func ListUnresolved(value *bool) {
-	fmt.Println("list unresolved", *value)
+func ListUnresolved(scope flags.Scope, value *bool) {
+	fmt.Println("list unresolved", *value, scope)
 	// TODO: implement
 }

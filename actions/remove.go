@@ -1,8 +1,12 @@
 package actions
 
-import "fmt"
+import (
+	"fmt"
 
-func Remove(value *string) {
-	fmt.Println("remove", *value)
+	"github.com/ducktordanny/td/flags"
+)
+
+func Remove(scope flags.Scope, value *string) {
+	fmt.Println("remove", *value, scope)
 	// TODO: implement
 }

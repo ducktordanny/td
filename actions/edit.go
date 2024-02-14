@@ -1,8 +1,12 @@
 package actions
 
-import "fmt"
+import (
+	"fmt"
 
-func Edit(value *bool) {
-	fmt.Println("edit", *value)
+	"github.com/ducktordanny/td/flags"
+)
+
+func Edit(scope flags.Scope, value *bool) {
+	fmt.Println("edit", *value, scope)
 	// TODO: implement
 }

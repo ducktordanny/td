@@ -11,16 +11,23 @@ import (
 func GetConfigPath() string {
 	const configBase = ".config/.tdconfig.json"
 
-	home, err := os.UserHomeDir()
+	usr, err := os.UserHomeDir()
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	return filepath.Join(home, configBase)
+	return filepath.Join(usr, configBase)
 }
 
-// TODO: If there is no config file then we should create a default one, or have it in the install process?
-func ReadConfig() TdConfig {
+func GetLocalPath() string {
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return path
+}
+
+func ReadFullConfig() TdConfig {
 	jsonConfig, err := os.Open(GetConfigPath())
 
 	if err != nil {
@@ -33,4 +40,14 @@ func ReadConfig() TdConfig {
 	json.Unmarshal([]byte(byteValue), &config)
 
 	return config
+}
+
+func GetGlobalTodos() []TodoModel {
+	config := ReadFullConfig()
+	return config.Globals
+}
+
+func GetLocalTodos() []TodoModel {
+	config := ReadFullConfig()
+	return config.Locals[GetLocalPath()]
 }

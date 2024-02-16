@@ -49,5 +49,18 @@ func GetGlobalTodos() []TodoModel {
 
 func GetLocalTodos() []TodoModel {
 	config := ReadFullConfig()
-	return config.Locals[GetLocalPath()]
+	return GetLocalModelByPath(&config, GetLocalPath()).Items
+}
+
+func WriteFullConfig(conf TdConfig) {
+	fileContent, err := json.Marshal(conf)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	jsonConfig, err := os.Create(GetConfigPath())
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer jsonConfig.Close()
+	io.WriteString(jsonConfig, string(fileContent))
 }

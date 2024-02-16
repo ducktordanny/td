@@ -1,15 +1,11 @@
 package process
 
 import (
-	"fmt"
-
 	"github.com/ducktordanny/td/actions"
 	"github.com/ducktordanny/td/flags"
 )
 
 func CommandsToAction(flagValues *flags.FlagValues) {
-	fmt.Println(*flagValues)
-
 	scope := flags.Scope(flags.LocalScope)
 	if flagValues.Global == true {
 		scope = flags.Scope(flags.GlobalScope)

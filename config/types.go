@@ -6,9 +6,12 @@ type TodoModel struct {
 	Resolved bool
 }
 
-type LocalsMap map[string][]TodoModel
+type LocalModel struct {
+	Path  string
+	Items []TodoModel
+}
 
 type TdConfig struct {
 	Globals []TodoModel
-	Locals  LocalsMap
+	Locals  []LocalModel
 }

@@ -8,6 +8,7 @@ import (
 	"golang.org/x/exp/slices"
 )
 
+// TODO: option for remove last and first
 func Remove(scope flags.Scope, value *string) {
 	if len(*value) != 7 {
 		log.Fatalln("Invalid Sha ID.")

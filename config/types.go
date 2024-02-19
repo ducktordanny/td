@@ -1,10 +1,13 @@
 package config
 
-// TODO: It would be good to have the date of creation
+import "time"
+
 type TodoModel struct {
-	Id       string
-	Content  string
-	Resolved bool
+	Id         string
+	Content    string
+	Resolved   bool
+	CreatedAt  time.Time
+	ResolvedAt *time.Time `json:"ResolvedAt,omitempty"`
 }
 
 type LocalModel struct {

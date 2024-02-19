@@ -1,5 +1,6 @@
 package config
 
+// TODO: It would be good to have the date of creation
 type TodoModel struct {
 	Id       string
 	Content  string

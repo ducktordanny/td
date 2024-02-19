@@ -3,6 +3,8 @@ package config
 import (
 	"crypto/sha1"
 	"encoding/hex"
+
+	"github.com/ducktordanny/td/flags"
 	"github.com/google/uuid"
 	"golang.org/x/exp/slices"
 )
@@ -17,6 +19,21 @@ func GenerateUniqueSha() string {
 	hashStr := hex.EncodeToString(hashed)
 
 	return hashStr[:7]
+}
+
+func GetListBasedOnScope(scope flags.Scope, conf *TdConfig) *[]TodoModel {
+	if scope == flags.LocalScope {
+		path := GetLocalPath()
+		localModel := GetLocalModelByPath(conf, path)
+		return &localModel.Items
+	}
+	return &(conf.Globals)
+}
+
+func GetIndexOfListBySha(list []TodoModel, sha string) int {
+	return slices.IndexFunc[[]TodoModel](list, func(todo TodoModel) bool {
+		return todo.Id == sha
+	})
 }
 
 /** Returns a `LocalModel` from based on path. Creates one if there isn't one with the given path. */

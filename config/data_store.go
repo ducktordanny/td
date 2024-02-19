@@ -27,7 +27,7 @@ func GetLocalPath() string {
 	return path
 }
 
-func ReadFullConfig() TdConfig {
+func ReadConfig() TdConfig {
 	jsonConfig, err := os.Open(GetConfigPath())
 
 	if err != nil {
@@ -42,17 +42,7 @@ func ReadFullConfig() TdConfig {
 	return config
 }
 
-func GetGlobalTodos() []TodoModel {
-	config := ReadFullConfig()
-	return config.Globals
-}
-
-func GetLocalTodos() []TodoModel {
-	config := ReadFullConfig()
-	return GetLocalModelByPath(&config, GetLocalPath()).Items
-}
-
-func WriteFullConfig(conf TdConfig) {
+func WriteConfig(conf TdConfig) {
 	fileContent, err := json.Marshal(conf)
 	if err != nil {
 		log.Fatalln(err)

@@ -43,7 +43,7 @@ func ReadConfig() TdConfig {
 }
 
 func WriteConfig(conf TdConfig) {
-	fileContent, err := json.Marshal(conf)
+	fileContent, err := json.MarshalIndent(conf, "", "  ")
 	if err != nil {
 		log.Fatalln(err)
 	}

@@ -16,7 +16,7 @@ type FlagProperties[T any] struct {
 }
 
 type FlagValues struct {
-	Add            string
+	Add            bool
 	Remove         string
 	Resolve        string
 	Unresolve      string

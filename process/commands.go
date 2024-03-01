@@ -11,7 +11,7 @@ func CommandsToAction(flagValues *flags.FlagValues) {
 		scope = flags.Scope(flags.GlobalScope)
 	}
 
-	if flagValues.Add != "" {
+	if flagValues.Add != false {
 		actions.Add(scope, &flagValues.Add)
 	} else if flagValues.Remove != "" {
 		actions.Remove(scope, &flagValues.Remove)

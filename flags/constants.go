@@ -1,6 +1,6 @@
 package flags
 
-var Add = FlagProperties[string]{
+var Add = FlagProperties[bool]{
 	usage: "Creates a new TODO.",
 	name:  "add",
 	alias: "a",

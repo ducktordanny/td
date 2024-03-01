@@ -22,7 +22,7 @@ func initBoolVarFlag(props *FlagProperties[bool]) {
 }
 
 func Init() FlagValues {
-	initStringVarFlag(&Add)
+	initBoolVarFlag(&Add)
 	initStringVarFlag(&Remove)
 	initStringVarFlag(&Resolve)
 	initStringVarFlag(&Unresolve)

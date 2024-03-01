@@ -7,10 +7,11 @@ import (
 	"github.com/ducktordanny/td/flags"
 )
 
-func Add(scope flags.Scope, value *string) {
+func Add(scope flags.Scope, value *bool) {
+	content := config.GetContentByEditor("")
 	todo := config.TodoModel{
 		Id:        config.GenerateUniqueSha(),
-		Content:   *value,
+		Content:   content,
 		Resolved:  false,
 		CreatedAt: time.Now(),
 	}

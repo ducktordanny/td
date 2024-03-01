@@ -7,7 +7,7 @@ import (
 	"github.com/ducktordanny/td/flags"
 )
 
-func Edit(scope flags.Scope, value *bool) {
+func Edit(scope flags.Scope, value *string) {
 	result := config.GetContentByEditor("Stuff to edit for now.")
 	fmt.Println(result)
 }

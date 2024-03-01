@@ -21,7 +21,7 @@ func CommandsToAction(flagValues *flags.FlagValues) {
 		actions.Unresolve(scope, &flagValues.Unresolve)
 	} else if flagValues.Toggle != "" {
 		actions.Toggle(scope, &flagValues.Toggle)
-	} else if flagValues.Edit != false {
+	} else if flagValues.Edit != "" {
 		actions.Edit(scope, &flagValues.Edit)
 	} else if flagValues.List != false {
 		actions.List(scope, &flagValues.List)

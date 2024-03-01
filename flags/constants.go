@@ -30,7 +30,7 @@ var Toggle = FlagProperties[string]{
 	alias: "t",
 }
 
-var Edit = FlagProperties[bool]{
+var Edit = FlagProperties[string]{
 	usage: "Edits a TODO based on the provided ID.",
 	name:  "edit",
 	alias: "e",

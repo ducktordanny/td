@@ -59,3 +59,9 @@ var Global = FlagProperties[bool]{
 	name:  "global",
 	alias: "g",
 }
+
+var Content = FlagProperties[string]{
+	usage: "Takes a content for adding or editing a todo. This is useful if you don't want the default behaviour which opens up an editor and takes your input.",
+	name:  "content",
+	alias: "c",
+}

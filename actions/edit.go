@@ -8,7 +8,7 @@ import (
 	"github.com/ducktordanny/td/flags"
 )
 
-func Edit(scope flags.Scope, value *string) {
+func Edit(scope flags.Scope, value *string, content *string) {
 	if len(*value) != 7 {
 		log.Fatalln("Invalid Sha ID.")
 	}
@@ -18,8 +18,10 @@ func Edit(scope flags.Scope, value *string) {
 	if indexToEdit == -1 {
 		log.Fatalln("Invalid Sha ID.")
 	}
-	result := config.GetContentByEditor((*list)[indexToEdit].Content)
-	(*list)[indexToEdit].Content = result
+	if *content == "" {
+		*content = config.GetContentByEditor((*list)[indexToEdit].Content)
+	}
+	(*list)[indexToEdit].Content = *content
 	(*list)[indexToEdit].CreatedAt = time.Now()
 	config.WriteConfig(conf)
 }

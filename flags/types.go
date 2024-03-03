@@ -26,4 +26,5 @@ type FlagValues struct {
 	ListResolved   bool
 	ListUnresolved bool
 	Global         bool
+	Content        string
 }

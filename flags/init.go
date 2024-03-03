@@ -10,8 +10,10 @@ func getAliasUsage(name string) string {
 }
 
 func initStringVarFlag(props *FlagProperties[string]) {
-	aliasUsage := getAliasUsage(props.name)
-	flag.StringVar(&props.value, props.alias, props.defaultValue, aliasUsage)
+	if props.alias != "" {
+		aliasUsage := getAliasUsage(props.name)
+		flag.StringVar(&props.value, props.alias, props.defaultValue, aliasUsage)
+	}
 	flag.StringVar(&props.value, props.name, props.defaultValue, props.usage)
 }
 
@@ -28,6 +30,7 @@ func Init() FlagValues {
 	initStringVarFlag(&Unresolve)
 	initStringVarFlag(&Toggle)
 	initStringVarFlag(&Edit)
+	initStringVarFlag(&Content)
 	initBoolVarFlag(&List)
 	initBoolVarFlag(&ListResolved)
 	initBoolVarFlag(&ListUnresolved)
@@ -41,6 +44,7 @@ func Init() FlagValues {
 		Unresolve:      Unresolve.value,
 		Toggle:         Toggle.value,
 		Edit:           Edit.value,
+		Content:        Content.value,
 		List:           List.value,
 		ListResolved:   ListResolved.value,
 		ListUnresolved: ListUnresolved.value,

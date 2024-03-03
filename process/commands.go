@@ -12,7 +12,7 @@ func CommandsToAction(flagValues *flags.FlagValues) {
 	}
 
 	if flagValues.Add != false {
-		actions.Add(scope, &flagValues.Add)
+		actions.Add(scope, &flagValues.Add, &flagValues.Content)
 	} else if flagValues.Remove != "" {
 		actions.Remove(scope, &flagValues.Remove)
 	} else if flagValues.Resolve != "" {
@@ -22,7 +22,7 @@ func CommandsToAction(flagValues *flags.FlagValues) {
 	} else if flagValues.Toggle != "" {
 		actions.Toggle(scope, &flagValues.Toggle)
 	} else if flagValues.Edit != "" {
-		actions.Edit(scope, &flagValues.Edit)
+		actions.Edit(scope, &flagValues.Edit, &flagValues.Content)
 	} else if flagValues.List != false {
 		actions.List(scope, &flagValues.List)
 	} else if flagValues.ListResolved != false {

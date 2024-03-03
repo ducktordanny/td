@@ -84,7 +84,7 @@ We should be able to do these for local, and global scopes, or even do it based 
 
 - [x] Should think through how to handle global TODOs and start to implement subcommand functionality for it.
 - [x] Think about a TODO's ID, and also update the examples above.
-- [ ] Extend add & edit functionalities, to be able to execute the action without an editor
+- [x] Extend add & edit functionalities, to be able to execute the action without an editor
   - E.g.: Have something like this: `td -a -c "NEW TODO"` and `td -e -c "EDITED VALUE"`
 - [ ] Add unit tests
 - [ ] Make some CI/CD processes, e.g.: Run tests on push, and see a bit more about go-release-action

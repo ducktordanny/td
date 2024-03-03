@@ -1,0 +1,55 @@
+{
+  "Globals": [
+    {
+      "Id": "6150b9a",
+      "Content": "Test",
+      "Resolved": false,
+      "CreatedAt": "2024-02-19T19:35:37.923528+01:00"
+    },
+    {
+      "Id": "175c0c5",
+      "Content": "well hello there",
+      "Resolved": true,
+      "CreatedAt": "2024-02-22T20:38:41.166162+01:00",
+      "ResolvedAt": "2024-02-22T20:39:29.495289+01:00"
+    }
+  ],
+  "Locals": [
+    {
+      "Path": "/Users/test/a",
+      "Items": [
+        {
+          "Id": "07900fc",
+          "Content": "Let's create a todo for this local thingy",
+          "Resolved": true,
+          "CreatedAt": "2024-02-19T19:40:18.752539+01:00",
+          "ResolvedAt": "2024-02-22T20:38:09.301923+01:00"
+        }
+      ]
+    },
+    {
+      "Path": "/Users/test/b",
+      "Items": [
+        {
+          "Id": "56832bb",
+          "Content": "I should implement this and that",
+          "Resolved": true,
+          "CreatedAt": "2024-02-22T20:41:53.040655+01:00",
+          "ResolvedAt": "2024-02-22T21:56:51.624897+01:00"
+        },
+        {
+          "Id": "4ffd25f",
+          "Content": "Should check out this and that",
+          "Resolved": false,
+          "CreatedAt": "2024-02-22T21:32:26.289645+01:00"
+        },
+        {
+          "Id": "dcf2abb",
+          "Content": "There are some really important stuffs to do...\nYES...",
+          "Resolved": false,
+          "CreatedAt": "2024-03-01T22:25:29.653768+01:00"
+        }
+      ]
+    }
+  ]
+}

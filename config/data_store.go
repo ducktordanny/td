@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 )
 
-func GetConfigPath() string {
+var GetConfigPath = func() string {
 	const configBase = ".config/.tdconfig.json"
 
 	usr, err := os.UserHomeDir()
@@ -19,7 +19,7 @@ func GetConfigPath() string {
 	return filepath.Join(usr, configBase)
 }
 
-func GetLocalPath() string {
+var GetLocalPath = func() string {
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatalln(err)

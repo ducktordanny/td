@@ -5,6 +5,7 @@ import (
 
 	"github.com/ducktordanny/td/config"
 	"github.com/ducktordanny/td/flags"
+	"github.com/fatih/color"
 )
 
 type resolveFilter string
@@ -16,10 +17,6 @@ const (
 )
 
 func formatToString(list []config.TodoModel, filter resolveFilter) {
-	const (
-		Yellow = "\033[33m"
-		Reset  = "\033[0m"
-	)
 	for index, item := range list {
 		if filter == resolved && !item.Resolved {
 			continue
@@ -27,11 +24,18 @@ func formatToString(list []config.TodoModel, filter resolveFilter) {
 		if filter == unresolved && item.Resolved {
 			continue
 		}
-		output := "%stodo %s%s\nDate: %s\nResolved: %t\n\n%s\n"
+
+		idOutput := "todo %s\n"
+		output := "Date: %s\nResolved: %t\n\n%s\n"
+		// Handle extra linebreak if it's not the last item
 		if index < len(list)-1 {
 			output = output + "\n"
 		}
-		fmt.Printf(output, Yellow, item.Id, Reset, item.CreatedAt, item.Resolved, item.Content)
+
+		color.Set(color.FgYellow)
+		fmt.Printf(idOutput, item.Id)
+		color.Unset()
+		fmt.Printf(output, item.CreatedAt, item.Resolved, item.Content)
 	}
 }
 

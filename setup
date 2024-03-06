@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp ./.tdconfig.json ~/.config/.tdconfig.json
